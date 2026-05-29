@@ -172,7 +172,7 @@ The fine-tuned model improved accuracy by about **14.82 percentage points** and 
 
 ![Base vs Fine-tuned FinBERT Confusion Matrices](assets/finbert_confusion_matrix.png)
 
-### NLP Sentiment Inference
+### Sentiment Inference
 
 We first score every tweet with the fine-tuned FinBERT. Each tweet is scored as a sentiment scalar:
 
