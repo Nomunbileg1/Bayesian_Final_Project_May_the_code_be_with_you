@@ -390,8 +390,6 @@ The ML-enhanced BL strategy heavily tilted toward PG because PG had lower volati
 
 ## Backtesting Results
 
-The strategies were tested on out-of-sample returns.
-
 | Strategy | Annual Return | Annual Volatility | Sharpe Ratio | Max Drawdown | Turnover | Allocation Stability |
 |---|---:|---:|---:|---:|---:|---:|
 | Equal Weight | 16.61% | 24.49% | 0.678 | -26.46% | 0.5003 | inf |
