@@ -174,15 +174,15 @@ The NLP component fine-tunes **FinBERT** on labeled financial tweet data, then a
 
 The fine-tuned model improved accuracy by about **14.82 percentage points** and macro F1 by about **17.05 percentage points**.
 
-![Base vs Fine-tuned FinBERT Confusion Matrices](assets/nlp_finbert_confusion_matrix.png)
+![Base vs Fine-tuned FinBERT Confusion Matrices](assets/finbert_confusion_matrix.png)
 
 ### NLP Sentiment Aggregation
 
 The tweet-level scores were aggregated by ticker and month. The model found generally positive sentiment across the selected tickers, with the strongest average sentiment for TSM and the weakest for PG.
 
-![NLP Sentiment Distribution](assets/nlp_sentiment_distribution.png)
+![NLP Sentiment Distribution](assets/sentiment_score.png)
 
-![Monthly Sentiment by Ticker](assets/nlp_sentiment_timeseries.png)
+![Monthly Sentiment by Ticker](assets/sentiment_score_time_series.png)
 
 ### Final NLP Absolute Beliefs
 
@@ -205,7 +205,7 @@ The tweet-level scores were aggregated by ticker and month. The model found gene
 | TSM over AAPL | 1.71% | 75.69% |
 | TSM over TSLA | 1.57% | 68.98% |
 
-![NLP Absolute and Relative Beliefs](assets/nlp_beliefs_heatmap.png)
+![NLP Absolute and Relative Beliefs](assets/nlp_beliefs.png)
 
 ### NLP Interpretation
 
