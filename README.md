@@ -356,11 +356,11 @@ The Black-Litterman posterior compressed aggressive growth expectations and incr
 
 | Ticker | Market Prior Return | BL Posterior Return |
 |---|---:|---:|
-| AAPL | 22.81% | 12.22% |
-| MSFT | 20.53% | 12.63% |
-| PG | 6.27% | 11.04% |
-| TSLA | 37.93% | 12.18% |
-| TSM | 21.24% | 13.84% |
+| AAPL  | 27.58% | 14.35%
+| MSFT  | 24.64% | 14.75%
+| PG    | 8.70% | 13.16%
+| TSLA  | 42.11% | 14.30%
+| TSM   | 23.61% | 15.93%
 
 This shift shows the Bayesian update moving the portfolio away from high-volatility growth exposure and toward a more defensive allocation.
 
@@ -378,24 +378,23 @@ sum(weights) = 1, weights >= 0
 
 | Ticker | Equal Weight | Market Prior | Markowitz MV | ML-Enhanced BL |
 |---|---:|---:|---:|---:|
-| AAPL | 20.00% | 38.64% | 18.75% | 3.15% |
-| MSFT | 20.00% | 26.37% | 9.91% | 9.83% |
-| PG | 20.00% | 2.84% | 34.10% | 66.72% |
-| TSLA | 20.00% | 13.90% | 18.06% | 0.00% |
-| TSM | 20.00% | 18.25% | 19.18% | 20.29% |
+| AAPL | 20.00% | 37.98% | 18.63% | 0.00% |
+| MSFT | 20.00% | 27.71% | 13.64% | 7.69% |
+| PG | 20.00% | 2.77% | 45.90% | 68.13% |
+| TSLA | 20.00% | 13.56% | 21.84% | 0.00% |
+| TSM | 20.00% | 17.98% | 0.00% | 24.18% |
 
 The ML-enhanced BL strategy heavily tilted toward PG because PG had lower volatility while its posterior return became comparable to the growth assets.
 
 ---
 
-## Backtesting Results
-
+45## Backtesting Results
 | Strategy | Annual Return | Annual Volatility | Sharpe Ratio | Max Drawdown | Turnover | Allocation Stability |
 |---|---:|---:|---:|---:|---:|---:|
-| Equal Weight | 16.61% | 24.49% | 0.678 | -26.46% | 0.5003 | inf |
-| Market Prior | 17.80% | 26.33% | 0.676 | -28.67% | 0.5003 | 69.16 |
-| Markowitz MV | 14.83% | 22.04% | 0.673 | -23.69% | 0.7271 | 162.99 |
-| ML-Enhanced BL | 9.91% | 15.59% | 0.636 | -13.37% | 1.3185 | 16.83 |
+| Equal Weight | 31.89% | 22.19% | 1.437 | -29.11% | 0.5137 | inf |
+| Market Prior | 33.04% | 23.21% | 1.423 | -30.83% | 0.5137 | 68.97 |
+| Markowitz MV | 20.21% | 19.07% | 1.060 | -24.96% | 1.0281 | 44.78 |
+| ML-Enhanced BL | 18.06% | 14.46% | 1.249 | -14.86% | 1.4311 | 15.22 |
 
 ![Allocation and Performance Comparison](assets/bl_allocation_performance.png)
 
