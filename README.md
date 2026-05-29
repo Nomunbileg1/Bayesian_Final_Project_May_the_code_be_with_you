@@ -102,13 +102,7 @@ The NLP model uses financial tweet data for sentiment inference.
 - Inference dataset: web-scraped stock tweets from 2021-2022 (Kaggle)
 - Final ticker-matched tweet rows: **63,423**
 
-Tweet sentiment is converted into a scalar score:
-
-```text
-sentiment_score = P(positive) - P(negative)
-```
-
-This produces values in the range `[-1, 1]`, where positive values indicate bullish sentiment and negative values indicate bearish sentiment.
+Tweet sentiment is converted into a scalar score in the range `[-1, 1]`, where positive values indicate bullish sentiment and negative values indicate bearish sentiment.
 
 ---
 
