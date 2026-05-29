@@ -387,7 +387,7 @@ The ML-enhanced BL portfolio cut volatility to 15.59%, which is nearly 40% lower
 
 The HMM and NLP models both flagged elevated uncertainty in tech and growth assets, and the BL framework translated those signals into a more conservative allocation. A risk-adjusted framework is not designed to chase upside; it is designed to survive downside.
 
-### 3. Sharpe ratios were competitive across all strategies
+### 3. Sharpe ratios were similar across all strategies
 
 All four strategies produced Sharpe ratios within a narrow band (0.636–0.678), confirming that the ML-enhanced BL portfolio achieved its risk reduction without a **proportional sacrifice in risk-adjusted performance.** The 0.04 gap is economically small, especially over a short out-of-sample window.
 
