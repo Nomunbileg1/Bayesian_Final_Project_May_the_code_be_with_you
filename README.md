@@ -507,8 +507,8 @@ The NLP and HMM notebooks export belief CSV files. The Black-Litterman notebook 
 | Jenny Lee | NLP beliefs | Built the NLP sentiment pipeline, fine-tuned FinBERT, generated ticker-level sentiment scores, and exported NLP absolute/relative Black-Litterman views. |
 | Jack Morgan | HMM beliefs | Built the Hidden Markov Model pipeline, trained market regime detection, ran Monte Carlo simulations, and exported HMM absolute/relative views. |
 | Noah Tan | Black-Litterman | Implemented the Black-Litterman integration layer, constructed prior/posterior expected returns, parsed view matrices, and built the optimization engine. |
-| Ryusei Leon Nakano | Backtesting, GitHub, presentation prep | Helped evaluate strategies using out-of-sample performance metrics, organized project materials, and prepared the repository/presentation structure. |
-| Nomunbileg Sukhbold | Backtesting, GitHub, presentation prep | Helped evaluate strategy performance, organize project outputs, write documentation, and prepare the final GitHub repository/presentation. |
+| Ryusei Leon Nakano | Backtesting, GitHub | Helped evaluate strategies using out-of-sample performance metrics, organized project materials, and prepared the repository/presentation structure. |
+| Nomunbileg Sukhbold | Backtesting, GitHub | Helped evaluate strategy performance, organize project outputs, write documentation, and prepare the final GitHub repository/presentation. |
 
 ---
 
