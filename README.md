@@ -409,9 +409,9 @@ The strategies were tested on out-of-sample returns beginning in 2025.
 
 The ML-enhanced BL portfolio cut volatility to 15.59%, which is nearly 40% lower than the market-prior portfolio (26.33%). Its max drawdown was **-13.37%**, compared with **-28.67%** for the market-prior portfolio.
 
-### 2. The ML signals correctly identified a defensive environment
+### 2. The ML signals identified a defensive environment
 
-The HMM and NLP models both flagged elevated uncertainty in tech and growth assets, and the BL framework translated those signals into a more conservative allocation. A risk-adjusted framework is not designed to chase upside; it is designed to survive downside.
+The HMM and NLP models both flagged elevated uncertainty in tech and growth assets, and the BL framework translated those signals into a more conservative allocation. Note that a risk-adjusted framework is designed to survive downside, not chase upside.
 
 ### 3. Sharpe ratios were similar across all strategies
 
