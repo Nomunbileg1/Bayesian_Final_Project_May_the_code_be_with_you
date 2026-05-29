@@ -169,12 +169,12 @@ The NLP component fine-tunes **FinBERT** on labeled financial tweet data, then a
 
 We fine-tuned FinBERT's classification head on the financial tweet-domain labeled data. We compared the fine-tuned model with the base model on the test set. Metrics: per-class F1, macro-F1, accuracy, and confusion matrix.
 
+The fine-tuned model improved accuracy by about **14.82 percentage points** and macro F1 by about **17.05 percentage points**.
+
 | Model | Accuracy | Macro F1 |
 |---|---:|---:|
 | Base FinBERT | 0.7303 | 0.6690 |
 | Fine-tuned FinBERT | 0.8786 | 0.8395 |
-
-The fine-tuned model improved accuracy by about **14.82 percentage points** and macro F1 by about **17.05 percentage points**.
 
 ![Base vs Fine-tuned FinBERT Confusion Matrices](assets/finbert_confusion_matrix.png)
 
@@ -187,9 +187,9 @@ We first score every tweet with the fine-tuned FinBERT. Each tweet is scored as 
 We aggregated sentiment by ticker and calendar period (monthly).
 
 For each bucket we compute:
-- mean_sentiment: volume-weighted mean score
-- sentiment_std: standard deviation (uncertainty / Omega)
-- n_mentions: number of tweets (low volume = higher uncertainty)
+- `mean_sentiment`: volume-weighted mean score
+- `sentiment_std`: standard deviation (uncertainty / Omega)
+- `n_mentions`: number of tweets (low volume = higher uncertainty)
 
 ![NLP Sentiment Distribution](assets/sentiment_score.png)
 
