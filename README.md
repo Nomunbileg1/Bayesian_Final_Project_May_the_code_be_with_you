@@ -20,7 +20,7 @@ The final posterior expected returns are used to optimize a long-only portfolio 
 
 The main question is:
 
-> Can Bayesian portfolio optimization improve allocation decisions by reconciling market priors with uncertain HMM and NLP-based investor views?
+> Can ML-enhanced Bayesian portfolio optimization improve allocation decisions by reconciling market priors with HMM and NLP-based investor views?
 
 ---
 
