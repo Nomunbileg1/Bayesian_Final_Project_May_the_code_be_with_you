@@ -404,19 +404,19 @@ The ML-enhanced BL strategy heavily tilted toward PG because PG had lower volati
 
 ### 1. Black-Litterman acted as a risk-control engine, delivering strong downside protection
 
-The ML-enhanced BL portfolio cut volatility to 15.59%, which is nearly 40% lower than the market-prior portfolio (26.33%). Its max drawdown was **-13.37%**, compared with **-28.67%** for the market-prior portfolio.
+The ML-enhanced BL portfolio achieved the lowest volatility (14.46%) and max drawdown (-14.86%) of all four strategies, which is less than half the drawdown of Equal-Weight (-29.11%) and Market-Prior (-30.83%). Note that a risk-adjusted framework is designed to survive downside, not chase upside.
 
 ### 2. The ML signals identified a defensive environment
 
-The HMM and NLP models both flagged elevated uncertainty in tech and growth assets, and the BL framework translated those signals into a more conservative allocation. Note that a risk-adjusted framework is designed to survive downside, not chase upside.
+The HMM and NLP models flagged elevated uncertainty across the asset universe, and the BL framework translated those signals into a more conservative allocation by accepting lower returns (18.06%) in exchange for substantially reduced drawdown relative to all three baselines.
 
-### 3. Sharpe ratios were similar across all strategies
+### 3. Sharpe ratios were competitive, but not dominant.
 
-All four strategies produced Sharpe ratios within a narrow band (0.636–0.678), confirming that the ML-enhanced BL portfolio achieved its risk reduction without a proportional sacrifice in risk-adjusted performance. The 0.04 gap is economically small and has essentially zero statistical significance.
+ML-Enhanced-BL (1.249) outperformed Markowitz-MV (1.060) on a risk-adjusted basis but trailed Equal-Weight (1.437) and Market-Prior (1.423). The gap relative to the simpler benchmarks is worth acknowledging; the ML framework reduced risk but did not generate sufficient alpha to fully compensate on a Sharpe basis over this particular out-of-sample window.
 
 ### 4. Black-Litterman successfully reconciled conflicting signals
 
-With 30 views from two very different model types (regime-based HMM and sentiment-based NLP), the BL framework produced a coherent, investable allocation. The strong PG tilt reflects the optimizer's rational response to comparable posterior returns across assets with very different volatility profiles, and is addressable with a simple weight cap in future iterations.
+With views from two very different model types (regime-based HMM and sentiment-based NLP), the BL framework produced a coherent, investable allocation. The high turnover (1.43) suggests the posterior was sensitive to shifting signals month-to-month, which addressable with view damping or weight caps in future iterations.
 
 ### 5. FinBERT fine-tuning demonstrated meaningful predictive improvement
 
