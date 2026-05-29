@@ -118,16 +118,16 @@ This produces values in the range `[-1, 1]`, where positive values indicate bull
 
 The Black-Litterman prior is based on market-implied equilibrium returns:
 
-```text
-Pi = delta * Sigma * w_mkt
-```
+$$
+\Pi = \delta * \Sigma * w_mkt
+$$
 
 Where:
 
-- `Pi` = market-implied expected returns
-- `delta` = risk-aversion coefficient
-- `Sigma` = annualized covariance matrix
-- `w_mkt` = market-capitalization weights
+- $\Pi$ = market-implied expected returns
+- $\delta$ = risk-aversion coefficient
+- $\Sigma$ = annualized covariance matrix
+- $w_mkt$ = market-capitalization weights
 
 ### Market-Implied Weights
 
