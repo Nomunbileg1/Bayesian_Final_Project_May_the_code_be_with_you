@@ -159,10 +159,10 @@ The NLP component fine-tunes **FinBERT** on labeled financial tweet data, then a
 
 1. Load Twitter Financial News Sentiment dataset (for fine-tuning).
 2. Remap labels into FinBERT convention: positive, negative, neutral.
-3. Fine-tune FinBERT for 3 epochs.
+3. Fine-tune FinBERT: adapt to tweet-domain financial language.
 4. Evaluate fine-tuned FinBERT against base FinBERT.
-5. Run inference on 2021-2022 stock tweets to output per-tweet sentiment score.
-6. Aggregate sentiment by ticker and month.
+5. Run inference on 2021-2022 stock tweets --> per-tweet sentiment score.
+6. Aggregate sentiment by ticker and month: mean sentiment, std, mention volume
 7. Convert sentiment into absolute and relative Black-Litterman views.
 
 ### FinBERT Evaluation
