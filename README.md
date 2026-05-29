@@ -181,7 +181,7 @@ We first score every tweet with the fine-tuned FinBERT. Each tweet is scored as 
 We aggregated sentiment by ticker and calendar period (monthly).
 
 For each bucket we compute:
-- `mean_sentiment`: volume-weighted mean score
+- `mean_sentiment`: mean sentiment score across all tweets in the period
 - `sentiment_std`: standard deviation (uncertainty / Omega)
 - `n_mentions`: number of tweets (low volume = higher uncertainty)
 
