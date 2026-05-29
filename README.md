@@ -277,20 +277,20 @@ The Black-Litterman model combines:
 - Market-implied prior returns
 - HMM absolute and relative beliefs
 - NLP absolute and relative beliefs
-- View uncertainty matrix `Omega`
+- View uncertainty matrix $\Omega$
 
 The model uses the standard posterior update:
 
-```text
-E[R] = Pi + tau * Sigma * P.T * inv(P * tau * Sigma * P.T + Omega) * (Q - P * Pi)
-```
+$$
+E[R] = \Pi + \tau * \Sigma * P.T * inv(P * \tau * \Sigma * P.T + \Omega) * (Q - P * \Pi)
+$$
 
 Where:
 
 - `P` = picking matrix that identifies assets in each view
 - `Q` = view return vector
-- `Omega` = diagonal covariance matrix of view uncertainty
-- `tau` = prior uncertainty scaling parameter
+- $\Omega$ = diagonal covariance matrix of view uncertainty
+- $\tau$ = prior uncertainty scaling parameter
 
 A total of **30 views** were integrated:
 
