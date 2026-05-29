@@ -167,6 +167,8 @@ The NLP component fine-tunes **FinBERT** on labeled financial tweet data, then a
 
 ### FinBERT Evaluation
 
+We fine-tuned FinBERT's classification head on the financial tweet-domain labeled data. We compared the fine-tuned model with the base model on the test set. Metrics: per-class F1, macro-F1, accuracy, and confusion matrix.
+
 | Model | Accuracy | Macro F1 |
 |---|---:|---:|
 | Base FinBERT | 0.7303 | 0.6690 |
@@ -176,15 +178,29 @@ The fine-tuned model improved accuracy by about **14.82 percentage points** and 
 
 ![Base vs Fine-tuned FinBERT Confusion Matrices](assets/finbert_confusion_matrix.png)
 
-### NLP Sentiment Aggregation
+### NLP Sentiment Inference
 
-The tweet-level scores were aggregated by ticker and month. The model found generally positive sentiment across the selected tickers, with the strongest average sentiment for TSM and the weakest for PG.
+We first score every tweet with the fine-tuned FinBERT. Each tweet is scored as a sentiment scalar:
+
+`score = P(positive) - P(negative)  ∈ [-1, +1]`
+
+We aggregated sentiment by ticker and calendar period (monthly).
+
+For each bucket we compute:
+- mean_sentiment: volume-weighted mean score
+- sentiment_std: standard deviation (uncertainty / Omega)
+- n_mentions: number of tweets (low volume = higher uncertainty)
 
 ![NLP Sentiment Distribution](assets/sentiment_score.png)
 
 ![Monthly Sentiment by Ticker](assets/sentiment_score_time_series.png)
 
 ### Final NLP Absolute Beliefs
+
+We collapse the time-series aggregation into a single set of beliefs over the full dataset window.
+- `ProbabilityPositive`: Volume-weighted soft probability of positive returns
+- `Confidence`: Directional conviction derived from the distance of ProbabilityPositive from neutrality
+- `Expected Return`: sentiment score scaled to rough return units using a calibration factor SENTIMENT_RETURN_SCALE (default 0.15 = ±15% annual)
 
 | Ticker | Expected Return | Probability Positive | Confidence | Total Mentions |
 |---|---:|---:|---:|---:|
@@ -194,7 +210,14 @@ The tweet-level scores were aggregated by ticker and month. The model found gene
 | TSM | 3.11% | 87.11% | 74.21% | 601 |
 | PG | 0.36% | 56.78% | 13.55% | 517 |
 
-### Strongest NLP Relative Views
+### Final NLP Relative Views
+
+Next, we generate relative beliefs. For every pair (A, B) we compute:
+- `MeanRelativeReturn`: scaled sentiment differential between A and B
+- `StdRelativeReturn`: propagated uncertainty from both assets
+- `ProbabilityOutperform`: P(sentiment_A > sentiment_B) across time periods
+  
+Only pairs where |MeanRelativeReturn| > VIEW_THRESHOLD become active Black-Litterman views.
 
 | View | Mean Relative Return | Probability Outperform |
 |---|---:|---:|
@@ -209,7 +232,7 @@ The tweet-level scores were aggregated by ticker and month. The model found gene
 
 ### NLP Interpretation
 
-The NLP signal is useful but imperfect. Tesla had extremely high tweet volume and remained strongly positive despite a large decline during the 2022 bear market, suggesting retail-investor optimism bias. TSM showed very strong sentiment but had much lower mention volume, so its sentiment signal is less reliable.
+The NLP signal is useful but imperfect. In hindsight, we observe that Tesla had extremely high tweet volume and remained strongly positive despite a large decline during the 2022 bear market, suggesting retail-investor optimism bias. 
 
 This is exactly where Black-Litterman is useful: it can include the sentiment view without allowing it to completely dominate the portfolio, because every view is assigned uncertainty.
 
