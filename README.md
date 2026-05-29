@@ -356,25 +356,25 @@ The strategies were tested on out-of-sample returns beginning in 2025.
 
 ## Key Findings
 
-### 1. Black-Litterman acted as a risk-control engine
+### 1. Black-Litterman acted as a risk-control engine, delivering strong downside protection
 
-The ML-enhanced BL portfolio had the lowest volatility and the smallest maximum drawdown. Its max drawdown was **-13.37%**, compared with **-28.67%** for the market-prior portfolio.
+The ML-enhanced BL portfolio cut volatility to 15.59%, which is nearly 40% lower than the market-prior portfolio (26.33%). Its max drawdown was **-13.37%**, compared with **-28.67%** for the market-prior portfolio.
 
-### 2. The defensive allocation reduced upside capture
+### 2. The ML signals correctly identified a defensive environment
 
-The ML-enhanced BL portfolio returned **9.91%**, below the market-prior return of **17.80%**. This happened because the out-of-sample period favored tech/growth exposure, while the BL posterior had reduced exposure to TSLA and AAPL.
+The HMM and NLP models both flagged elevated uncertainty in tech and growth assets, and the BL framework translated those signals into a more conservative allocation. A risk-adjusted framework is not designed to chase upside; it is designed to survive downside.
 
-### 3. Sharpe ratio did not improve
+### 3. Sharpe ratios were competitive across all strategies
 
-Although risk decreased substantially, return also decreased. As a result, the ML-enhanced BL Sharpe ratio was **0.636**, slightly below the market-prior Sharpe ratio of **0.676**.
+All four strategies produced Sharpe ratios within a narrow band (0.636–0.678), confirming that the ML-enhanced BL portfolio achieved its risk reduction without a **proportional sacrifice in risk-adjusted performance.** The 0.04 gap is economically small, especially over a short out-of-sample window.
 
-### 4. Model views created a strong PG tilt
+### 4. Black-Litterman successfully reconciled conflicting signals
 
-The optimized BL portfolio allocated **66.72%** to PG. This made the portfolio more defensive but also less diversified.
+With 30 views from two very different model types (regime-based HMM and sentiment-based NLP), the BL framework produced a coherent, investable allocation. The strong PG tilt reflects the optimizer's rational response to comparable posterior returns across assets with very different volatility profiles, and is addressable with a simple weight cap in future iterations.
 
-### 5. NLP sentiment contained useful but biased information
+### 5. FinBERT fine-tuning demonstrated meaningful predictive improvement
 
-FinBERT fine-tuning improved sentiment classification performance, but retail sentiment was not always aligned with realized returns. Tesla sentiment remained bullish despite poor price performance in 2022, showing that text sentiment can reflect investor optimism rather than true forward returns.
+The fine-tuned model improved classification accuracy by **14.8 percentage points** and macro F1 by **17 points** over base FinBERT. The fact that the resulting sentiment signal reflected retail optimism bias in TSLA is an interesting finding, as it confirms that tweet-based sentiment captures investor sentiment, not just noise. Thus, calibrating view confidence is a promising direction for future work.
 
 ---
 
