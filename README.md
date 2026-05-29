@@ -98,8 +98,8 @@ Daily adjusted closing prices were downloaded using `yfinance` for the selected 
 
 The NLP model uses financial tweet data for sentiment inference.
 
-- Fine-tuning dataset: Twitter Financial News Sentiment from HuggingFace
-- Inference dataset: Kaggle stock tweets from 2021-2022
+- Fine-tuning dataset: Twitter Financial News Sentiment (HuggingFace)
+- Inference dataset: web-scraped stock tweets from 2021-2022 (Kaggle)
 - Final ticker-matched tweet rows: **63,423**
 
 Tweet sentiment is converted into a scalar score:
@@ -153,15 +153,15 @@ Where:
 
 ## 2. NLP Sentiment Beliefs
 
-The NLP component fine-tunes **ProsusAI/FinBERT** on labeled financial tweet data, then applies the fine-tuned model to ticker-matched stock tweets.
+The NLP component fine-tunes **FinBERT** on labeled financial tweet data, then applies the fine-tuned model to ticker-matched stock tweets.
 
 ### NLP Pipeline
 
-1. Load Twitter Financial News Sentiment data.
+1. Load Twitter Financial News Sentiment dataset (for fine-tuning).
 2. Remap labels into FinBERT convention: positive, negative, neutral.
 3. Fine-tune FinBERT for 3 epochs.
 4. Evaluate fine-tuned FinBERT against base FinBERT.
-5. Score Kaggle stock tweets.
+5. Run inference on 2021-2022 stock tweets to output per-tweet sentiment score.
 6. Aggregate sentiment by ticker and month.
 7. Convert sentiment into absolute and relative Black-Litterman views.
 
