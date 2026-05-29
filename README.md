@@ -322,6 +322,38 @@ A total of **30 views** were integrated:
 - 10 NLP relative views
 - 5 NLP absolute views
 
+```text
++------------------+      +--------------------+
+|  yfinance Data   |      | ML Belief CSVs     |
+| (Prices, Mcaps)  |      | (HMM & NLP Models) |
++--------+---------+      +---------+----------+
+         |                          |
+         v                          v
++--------+---------+      +---------+----------+
+|  Market Prior    |      | Views & Confidence |
+|    (Pi, Sigma)   |      |    (P, Q, Omega)   |
++--------+---------+      +---------+----------+
+         |                          |
+         +------------+-------------+
+                      |
+                      v
+          +-----------+-----------+
+          |  Black-Litterman Core |
+          |   (Posterior Returns) |
+          +-----------+-----------+
+                      |
+                      v
+          +-----------+-----------+
+          |  Markowitz Optimizer  |
+          |   (Portfolio Weights) |
+          +-----------+-----------+
+                      |
+                      v
+          +-----------+-----------+
+          | OOS Performance Metrics|
+          |(Sharpe, Drawdown, etc.)|
+          +-----------------------+
+```
 ---
 
 ## 5. Posterior Expected Returns
