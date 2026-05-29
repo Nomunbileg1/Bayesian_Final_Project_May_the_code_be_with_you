@@ -405,7 +405,6 @@ The fine-tuned model improved classification accuracy by **14.8 percentage point
 
 - The asset universe is small, with only five equities.
 - The NLP signal is sensitive to tweet volume and retail-investor bias.
-- TSM and PG had much lower tweet counts than TSLA, making their sentiment estimates less stable.
 - HMM simulation results can be sensitive to the number of hidden states and training window.
 - The optimized ML-BL portfolio became highly concentrated in PG.
 - Transaction costs were not explicitly deducted from returns.
